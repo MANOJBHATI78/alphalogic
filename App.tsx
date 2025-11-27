@@ -22,17 +22,12 @@ const SeoUpdater = () => {
   React.useEffect(() => {
     // Determine the key path (e.g., map /services/web/xyz to /services/web if needed)
     let path = location.pathname;
-    // Simple matching for demo
-    if (path.startsWith('/services/')) {
-       // path is already correct for service pages based on our routes
-    }
     
     const seo = getPageSeo(path);
     if (seo) {
       document.title = seo.title;
       // In a real SSR app, you'd update meta tags here. 
       // For this demo, we just log it or update title.
-      console.log(`[SEO UPDATE] Title: ${seo.title} | Desc: ${seo.metaDescription}`);
     } else {
       document.title = 'Alphalogic | Digital Growth Agency';
     }
@@ -58,7 +53,8 @@ const App = () => {
         <Routes>
           <Route path="/admin" element={<Admin />} />
           
-          <Route path="*" element={
+          {/* Use /* to ensure nested routes match correctly */}
+          <Route path="/*" element={
             <SiteLayout>
               <Routes>
                 <Route path="/" element={<Home />} />
@@ -76,6 +72,8 @@ const App = () => {
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/enquiry" element={<Enquiry />} />
+                
+                {/* Catch all inside the layout */}
                 <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
             </SiteLayout>
