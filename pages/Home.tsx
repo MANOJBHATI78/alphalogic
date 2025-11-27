@@ -66,13 +66,13 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 2. Tech Stack Marquee */}
+      {/* 2. Tech Stack Marquee (Visible Fix) */}
       <section className="py-10 bg-dark overflow-hidden border-y border-white/10">
         <div className="flex whitespace-nowrap animate-[scroll_20s_linear_infinite]">
           {[...Array(2)].map((_, i) => (
             <div key={i} className="flex gap-16 mx-8">
                {['REACT JS', 'NEXT.JS', 'WORDPRESS', 'SHOPIFY', 'GOOGLE ADS', 'META ADS', 'WHATSAPP API', 'NODE.JS', 'TAILWIND CSS'].map((tech) => (
-                 <span key={tech} className="text-4xl font-display font-bold text-transparent bg-clip-text bg-gradient-to-b from-white to-white/40 uppercase opacity-80 hover:opacity-100 transition-opacity">
+                 <span key={tech} className="text-4xl font-display font-bold text-white/90 uppercase opacity-100 hover:text-primary transition-colors cursor-default">
                    {tech}
                  </span>
                ))}

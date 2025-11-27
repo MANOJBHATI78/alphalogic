@@ -1,6 +1,7 @@
+
 import React from 'react';
 import { HashRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
-import Layout from './components/Layout';
+import SiteLayout from './components/SiteLayout';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import Work from './pages/Work';
@@ -58,7 +59,7 @@ const App = () => {
           <Route path="/admin" element={<Admin />} />
           
           <Route path="*" element={
-            <Layout>
+            <SiteLayout>
               <Routes>
                 <Route path="/" element={<Home />} />
                 
@@ -77,7 +78,7 @@ const App = () => {
                 <Route path="/enquiry" element={<Enquiry />} />
                 <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
-            </Layout>
+            </SiteLayout>
           } />
         </Routes>
       </Router>

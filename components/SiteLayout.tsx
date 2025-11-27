@@ -166,7 +166,7 @@ const Footer = () => {
   );
 };
 
-const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+const SiteLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isEnquiryOpen, setIsEnquiryOpen] = useState(false);
 
   return (
@@ -204,4 +204,4 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   );
 };
 
-export default Layout;
+export default SiteLayout;
